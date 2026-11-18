@@ -65,6 +65,14 @@
 
 
 
+##### \*\*\* Load **Text Encoder** with **.gguf** extension \*\*\*
+
+
+
+1\. **Downlaod** **text encoder** and place it to **ComfyUI/models/clip** or **ComfyUI/models/clip\_gguf/.**
+
+
+
 
 
 ##### \*\*\* Load **Text Encoder** with **.safetensors** extension \*\*\*
