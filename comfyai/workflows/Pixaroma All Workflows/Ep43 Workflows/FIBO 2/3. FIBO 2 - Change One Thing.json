@@ -1,0 +1,1813 @@
+{
+  "revision": 0,
+  "last_node_id": 22,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        0,
+        218
+      ],
+      "size": [
+        420,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            3,
+            11
+          ]
+        }
+      ],
+      "title": "Load Diffusion Model (FIBO 2 Turbo)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "fibo2\\fibo2_edit_turbo_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "fibo2\\fibo2_edit_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      },
+      "color": "#f66744",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        0,
+        356
+      ],
+      "size": [
+        420,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            10
+          ]
+        }
+      ],
+      "title": "Load CLIP (FIBO 2 text encoder)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_4b_bf16.safetensors",
+        "fibo2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_4b_bf16.safetensors",
+        "type": "fibo2",
+        "device": "default"
+      },
+      "color": "#f66744",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        0,
+        518
+      ],
+      "size": [
+        420,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8,
+            16,
+            24
+          ]
+        }
+      ],
+      "title": "Load VAE (Flux 2 VAE)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "flux2-vae.safetensors"
+      },
+      "color": "#f66744",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 4,
+      "type": "CLIPLoader",
+      "pos": [
+        0,
+        632
+      ],
+      "size": [
+        420,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1,
+            9
+          ]
+        }
+      ],
+      "title": "Load CLIP (the JSON helper, Qwen3-VL 8B)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "fibo2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+        "type": "fibo2",
+        "device": "default"
+      },
+      "color": "#f66744",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 5,
+      "type": "PixaromaAIPrompt",
+      "pos": [
+        460,
+        218
+      ],
+      "size": [
+        480,
+        640
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "shape": 7,
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "localized_name": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "AI Prompt Pixaroma (1. your idea, the first picture)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaAIPrompt",
+        "aiPromptState": {
+          "idea": "A close-up portrait of a smiling woman pouring maple syrup on a stack of pancakes at her kitchen counter, a white mug with \"PIXA\" on it beside the plate, a simple uncluttered kitchen, soft morning window light",
+          "formula": "You are a visionary and creative Visual Art Director at a leading Generative AI company.\nYour expertise lies in taking a user's textual concept and transforming it into a rich, detailed, and aesthetically compelling visual scene.\nYour primary task is to receive a user's description of a desired image and generate a comprehensive JSON object that describes this imagined scene in vivid detail. You must creatively infer and add details that are not explicitly mentioned in the user's request, such as background elements, lighting conditions, composition, and mood, always aiming for a high-quality, visually appealing result unless the user's prompt suggests otherwise.\nAdhere strictly to the following structure and guidelines:\nThe output MUST be ONLY a valid JSON object. Do not include any text before or after the JSON object (e.g., no \"Here is the JSON:\", no explanations, no apologies).\nIMPORTANT: When describing human body parts, positions, or actions, always describe them from the PERSON'S OWN PERSPECTIVE, not from the observer's viewpoint. For example, if a person's left arm is raised (from their own perspective), describe it as \"left arm\" even if it appears on the right side of the image from the viewer's perspective.\nRULE for Human Subjects: When the user's prompt features a person or people as the main subject, you MUST default to a composition that frames them prominently. Aim for compositions where their face and upper body are a primary focus (e.g., 'medium shot', 'close-up'). Avoid defaulting to 'wide-angle' or 'full-body' shots where the face is small, unless the user's prompt specifically implies a large scene (e.g., \"a person standing on a mountain\").\nRULE for Device Screens: Describe what is on a screen only if the user explicitly asks for it (e.g., \"map visible on screen\"); describing what the person does on it (reading, scrolling, video-calling, playing, typing) does not count; only words like \"visible\", \"showing\" or \"displaying\" do. Otherwise, never mention screen content or glow anywhere in the JSON, and set the device's `orientation` to face its user, screen away from the camera. When screen content is requested, turn the screen toward the camera and pose the person to match: they hold it out to show it, and the person's description must say their eyes look at the camera or out into the scene, never at the screen.\nUnless the user's prompt explicitly requests a different style (e.g., 'painting', 'cartoon', 'illustration'), you MUST default to `style_medium: \"photograph\"` and aim for the highest degree of photorealism. In such cases, `artistic_style` should be \"realistic\" or a similar descriptor.\nThe JSON object must contain the following keys precisely:\n1.  `short_description`: (String) A concise summary of the imagined image content, 200 words maximum.\n2.  `objects`: (Array of Objects) List the prominent objects of the scene. For each object, include:\n    * `description`: (String) A detailed description of the imagined object, 100 words maximum.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `relative_size`: (String) E.g., \"small\", \"medium\", \"large within frame\". (If a person is the main subject, this should be \"medium-to-large\" or \"large within frame\").\n    * `shape_and_color`: (String) Describe the basic shape and dominant color.\n    * `texture`: (String) E.g., \"smooth\", \"rough\", \"metallic\", \"furry\".\n    * `appearance_details`: (String) Any other notable visual details.\n    * `relationship`: (String) Describe the relationship between the object and the other objects in the image.\n    * `orientation`: (String) Describe the orientation or positioning of the object, e.g., \"upright\", \"tilted 45 degrees\", \"horizontal\", \"vertical\", \"facing left\", \"facing right\", \"upside down\", \"lying on its side\".\n    * If the object is a human or a human-like object, include the following:\n        * `pose`: (String) Describe the body position.\n        * `expression`: (String) Describe facial expression and emotion. E.g., \"winking\", \"joyful\", \"serious\", \"surprised\", \"calm\".\n        * `clothing`: (String) Describe attire.\n        * `action`: (String) Describe the action of the human.\n        * `gender`: (String) Describe the gender of the human.\n        * `skin_tone_and_texture`: (String) Describe the skin tone and texture.\n    * If the object is a cluster of objects, include the following:\n        * `number_of_objects`: (Integer) The number of objects in the cluster.\n3.  `background_setting`: (String) Describe the overall environment, setting, or background, including any notable background elements that are not part of the `objects` section.\n4.  `lighting`: (Object)\n    * `conditions`: (String) E.g., \"bright daylight\", \"dim indoor\", \"studio lighting\", \"golden hour\".\n    * `direction`: (String) E.g., \"front-lit\", \"backlit\", \"side-lit from left\".\n    * `shadows`: (String) Describe the presence and quality of shadows, e.g., \"long, soft shadows\", \"sharp, defined shadows\", \"minimal shadows\".\n5.  `aesthetics`: (Object)\n    * `composition`: (String) E.g., \"rule of thirds\", \"symmetrical\", \"centered\", \"leading lines\". If people are the main subject, specify the shot type, e.g., \"medium shot\", \"close-up\", \"portrait composition\".\n    * `color_scheme`: (String) E.g., \"monochromatic blue\", \"warm complementary colors\", \"high contrast\".\n    * `mood_atmosphere`: (String) E.g., \"serene\", \"energetic\", \"mysterious\", \"joyful\".\n6.  `photographic_characteristics`: (Object)\n    * `depth_of_field`: (String) E.g., \"shallow\", \"deep\", \"bokeh background\".\n    * `focus`: (String) E.g., \"sharp focus on subject\", \"soft focus\", \"motion blur\".\n    * `camera_angle`: (String) E.g., \"eye-level\", \"low angle\", \"high angle\", \"dutch angle\".\n    * `lens_focal_length`: (String) E.g., \"wide-angle\", \"telephoto\", \"macro\", \"fisheye\". (If the main subject is a person, prefer \"standard lens (e.g., 35mm-50mm)\" or \"portrait lens (e.g., 50mm-85mm)\" to ensure they are framed more closely. Avoid \"wide-angle\" for people unless specified).\n7.  `style_medium`: (String) Identify the artistic style or medium based on the user's prompt or creative interpretation (e.g., \"photograph\", \"oil painting\", \"watercolor\", \"3D render\", \"digital illustration\", \"pencil sketch\").\n8.  `artistic_style`: (String) If the style is not \"photograph\", describe its specific artistic characteristics, 3 words maximum. (e.g., \"impressionistic, vibrant, textured\" for an oil painting).\n9.  `context`: (String) Provide a general description of the type of image this would be. For example: \"This is a concept for a high-fashion editorial photograph intended for a magazine spread,\" or \"This describes a piece of concept art for a fantasy video game.\"\n10. `text_render`: (Array of Objects) Every piece of text that should appear in the image MUST be an entry in this array, written exactly as it should read in the image: titles, headlines, labels, signs, captions, buttons, menu items, numbers, prices, dates -- whether the user quoted it or it is implied by the scene. Text mentioned in `short_description` or in any object's description must ALSO appear here as its own entry. Put each separate line, label or list item in its own entry. If the image has no text, the array is empty (`[]`).\n    * `text`: (String) The exact text as it should appear in the image. NEVER use generic placeholders.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `size`: (String) E.g., \"medium\", \"large\", \"large within frame\".\n    * `color`: (String) E.g., \"red\", \"blue\", \"green\".\n    * `font`: (String) E.g., \"realistic\", \"cartoonish\", \"minimalist\", \"serif typeface\".\n    * `appearance_details`: (String) Any other notable visual details.\nEnsure the information within the JSON is detailed, creative, internally consistent, and avoids redundancy between fields.\nThe user's message is the request. Generate a detailed JSON object, adhering to the expected schema, for an imagined scene based on that request.",
+          "model": "",
+          "clip_type": "fibo2",
+          "order": "idea",
+          "sep": "newline",
+          "seed": 0,
+          "temperature": 0.3,
+          "max_length": 3000,
+          "top_k": 20,
+          "top_p": 0.95,
+          "min_p": 0.05,
+          "repetition_penalty": 1.05,
+          "presence_penalty": 0,
+          "do_sample": true,
+          "thinking": false,
+          "use_default_template": true,
+          "release_model": false,
+          "system_formula": true,
+          "mtp": false,
+          "seed_mode": "fixed",
+          "idea_share": 0.287
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 6,
+      "type": "PixaromaSizes",
+      "pos": [
+        980,
+        218
+      ],
+      "size": [
+        292,
+        284
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "links": [
+            18,
+            25
+          ]
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "links": [
+            19,
+            26
+          ]
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "title": "Sizes Pixaroma (2. picture size)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaSizes",
+        "sizesState": "{\"version\":1,\"sizes\":[[1024,1024],[1120,896],[1152,864],[1248,832],[1424,800]],\"selected\":2,\"orientation\":\"portrait\",\"snap\":16,\"accent\":null,\"collapsed\":false,\"starred\":[],\"tags\":{},\"w\":864,\"h\":1152}"
+      },
+      "widgets_values": [
+        {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1120,
+              896
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1424,
+              800
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 16,
+          "accent": null,
+          "collapsed": false,
+          "starred": [],
+          "tags": {},
+          "w": 864,
+          "h": 1152
+        }
+      ],
+      "widgets_values_named": {
+        "sizes_ui": {
+          "version": 1,
+          "sizes": [
+            [
+              1024,
+              1024
+            ],
+            [
+              1120,
+              896
+            ],
+            [
+              1152,
+              864
+            ],
+            [
+              1248,
+              832
+            ],
+            [
+              1424,
+              800
+            ]
+          ],
+          "selected": 2,
+          "orientation": "portrait",
+          "snap": 16,
+          "accent": null,
+          "collapsed": false,
+          "starred": [],
+          "tags": {},
+          "w": 864,
+          "h": 1152
+        }
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 7,
+      "type": "PixaromaSeed",
+      "pos": [
+        980,
+        580
+      ],
+      "size": [
+        320,
+        86
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            20,
+            27
+          ]
+        }
+      ],
+      "title": "Seed Pixaroma (3. fixed or random)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaSeed",
+        "seedState": "{\"seed\":4,\"mode\":\"fixed\",\"compact\":true,\"digits\":16}"
+      },
+      "widgets_values": [
+        {
+          "seed": 4,
+          "mode": "fixed",
+          "compact": true,
+          "digits": 16
+        }
+      ],
+      "widgets_values_named": {
+        "seed_ui": {
+          "seed": 4,
+          "mode": "fixed",
+          "compact": true,
+          "digits": 16
+        }
+      },
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 8,
+      "type": "TextEncodeFibo2",
+      "pos": [
+        1340,
+        218
+      ],
+      "size": [
+        400,
+        254
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "localized_name": "image_1",
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 17
+        },
+        {
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 18
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 19
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "title": "Text Encode Fibo 2 (the first picture)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "TextEncodeFibo2"
+      },
+      "widgets_values": [
+        "",
+        "",
+        0,
+        0,
+        1
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "negative_prompt": "",
+        "width": 0,
+        "height": 0,
+        "batch_size": 1
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 9,
+      "type": "KSampler",
+      "pos": [
+        1340,
+        528
+      ],
+      "size": [
+        367,
+        262
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 3
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 6
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 20
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "title": "KSampler (the first picture, 4 steps, CFG 1)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 1,
+        "control_after_generate": "fixed",
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [
+        1340,
+        846
+      ],
+      "size": [
+        281,
+        46
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            21,
+            23,
+            29
+          ]
+        }
+      ],
+      "title": "VAE Decode (the first picture)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 11,
+      "type": "PixaromaAIPrompt",
+      "pos": [
+        1780,
+        218
+      ],
+      "size": [
+        480,
+        640
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "shape": 7,
+          "type": "CLIP",
+          "link": 9
+        },
+        {
+          "localized_name": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 21
+        },
+        {
+          "localized_name": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "title": "AI Prompt Pixaroma (4. the ONE change)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaAIPrompt",
+        "aiPromptState": {
+          "idea": "Change the pancakes to waffles.",
+          "formula": "You are a highly skilled Creative Director for Visual Adaptation at a leading Generative AI company.\n\nYour expertise lies in using an existing image as a visual reference to create entirely new scenes. You can deconstruct a reference image to understand its subject, pose, and style, and then reimagine it in a new context based on textual instructions.\n\nYour primary task is to receive a reference image and a textual edit instruction. You will analyze the reference to extract key visual information and then generate a comprehensive JSON object describing a new scene that creatively incorporates the user's instructions.\n\n**FIDELITY RULE:** Unless explicitly requested or implied by the user's edit instruction (e.g., changing the setting requires new lighting), you should preserve all visual properties of the reference image. This includes, but is not limited to: the identity, pose, and appearance of all subjects (people/animals), the existence, location, size, and orientation of all objects, the overall composition, camera angle, lens characteristics, and the style/medium. Only change what is strictly required to fulfill the user's edit.\nE.g. if the user's request is to change the expression of a person in the image, the only change should be the expression, not the pose, composition, background, etc. On the other hand, if the user requested to change the background to a snowy forest, you should change the background, lighting, and mood atmosphere, etc., but keep the subject the same.\nMake sure to acknowledge the changing elements in the relevant \"description\" fields (i.e. \"short_description\", object \"description\", etc.). e.g. if the user requested to change the expression of a person to \"sad\", make sure to write \"the person is sad\" in the \"short_description\".\n\n**Describe the FINAL image only, never the edit (STRICT):** describe changed elements by their resulting STATE, not the action — e.g. `the person looks sad` / `his hands are empty`, NOT `the expression was changed to sad` / `the book was removed`. In every field except `edit_instruction`, do NOT use edit/change verbs or references to the edit (\"changed\", \"added\", \"removed\", \"replaced\", \"now\", \"instead of\", \"has been\", \"originally\", \"the original\"), and never make \"the scene\"/\"the image\"/\"the frame\" the subject of a change verb. Only `edit_instruction` states the change.\n\n**CONTROL-MAP / CONDITIONING INPUTS (act differently):** Sometimes the input image is NOT a normal photograph or illustration but a *conditioning / control map* — e.g. a Canny edge map, a depth map, a pose skeleton, a segmentation or color grid, a low-resolution / tiled image (super-resolution), or a monochrome image to be recolored. You can tell from the instruction (e.g. \"match this edge map\", \"use this depth map to generate ...\", \"use this pose guidance to generate ...\", \"recolor this monochrome image into ...\", \"increase the clarity and resolution\"). In these cases the FIDELITY RULE above is INVERTED for appearance: do NOT preserve or describe the control map's literal look (its edges, grey depth values, skeleton lines, grid colors, blockiness, or lack of color). Instead treat the input purely as STRUCTURAL guidance — outline/geometry (edges), spatial layout and relative distance (depth), body position and framing (pose), regional layout (segmentation/color grid), or coarse composition (low-res) — and describe the NEW, fully-rendered, realistic image the instruction asks for. Take the subject, colors, materials, textures, and style from the instruction's target description (defaulting to a realistic photograph unless it says otherwise), while keeping the structure/geometry/pose that the control map dictates. Every field (`objects`, `background_setting`, `style_medium`, `lighting`, etc.) must describe that intended final image — never the control map itself.\n\nAdhere strictly to the following structure and guidelines:\n\n1.  **Inputs:** You will receive a reference image and a textual edit instruction. You will NOT receive a starting JSON.\n2.  **Core Logic (Analyze and Synthesize):**\n    * **Analyze:** First, deeply analyze the provided reference image. Identify its primary subject(s), their specific poses, expressions, and appearance. Also note the overall composition, lighting style, and artistic medium.\n    * **Synthesize:** Next, interpret the textual edit instruction to understand what elements to keep from the reference and what to change. You will then construct a brand new JSON object from scratch that describes the desired final scene. For example, if the instruction is \"the same dog and pose, but at the beach,\" you must describe the dog from the reference image in the `objects` array but create a new `background_setting` for a beach, with appropriate `lighting` and `mood_atmosphere`. **The description of every unchanged element (objects, people, composition, camera settings, style) MUST be derived directly from the reference image.**\n3.  **Output:** Your output MUST be ONLY a single, valid JSON object that describes the **new, imagined scene**. Do not describe the original reference image.\n4.  **Holistic Consistency:** Ensure the generated JSON is internally consistent. A change in the environment should be reflected logically across multiple fields, such as `background_setting`, `lighting`, `shadows`, and the `short_description`.\n5.  **Schema Adherence:** The new JSON object you generate must strictly follow the schema provided below.\n\nUnless the user's prompt explicitly requests a different style (e.g., 'painting', 'cartoon', 'illustration') and if the original image is a photograph, you MUST default to `style_medium: \"photograph\"`. In such cases, `artistic_style` should be \"realistic\" or a similar descriptor.\n\n**Edit Instruction Rewriting Rule:** You should rewrite the user's request into a single instruction in the imperative style. Follow the examples below to guide your rewriting:\n\n| Edit Category | User Input Example | Your Rewritten Output (Imperative Style) |\n| :--- | :--- | :--- |\n| **Modify Style** | \"I want this picture to look like a cartoon.\" | `Turn the image into the cartoon style.` |\n| | \"Could you make it an oil painting?\" | `Change the image style to Oil_Painting.` |\n| **Object Attribute** | \"Make the dog black and white instead of brown.\"| `Change the dog's color to black and white.` |\n| | \"I want the shirt to be a formal white shirt.\"| `Change the subject's shirt to a formal white shirt.` |\n| **Adding Elements** | \"Put a hat on the person's head.\" | `Add a wide-brimmed felt hat to the subject.` |\n| **Removing Objects** | \"Get rid of the book they are holding.\" | `Remove the book from the subject's hands.` |\n| **Replacing Objects** | \"Replace the rose with a sunflower.\" | `Change the rose to a bright yellow sunflower.` |\n| **Lighting/Relight** | \"Change the lighting to be bright and vibrant.\" | `Change the lighting from dark and moody to bright and vibrant.` |\n| **Composition/Camera** | \"I want a wider shot, showing more of the background.\"| `Change the perspective to a wider shot.` |\n| **Text/Label** | \"Change the text 'Happy Anniversary' to 'Hello'.\"| `Change the text \"Happy Anniversary\" to \"Hello\".` |\n| **Quality/Refinement** | \"Can you make the image sharper?\" | `Refine the image to obtain increased clarity and sharpness.` |\n| **Style Reference** | \"Use the style in the image but with a fox.\" | `Use the style in the image to depict a red fox walking.` |\n\nThe JSON object must contain the following keys precisely:\n\n1.  `short_description`: (String) A concise summary of the imagined image content, 200 words maximum.\n2.  `objects`: (Array of Objects) List a maximum of 5 prominent objects. If the scene implies more than 5, creatively choose the most important ones and describe the rest in the background. For each object, include:\n    * `description`: (String) A detailed description of the imagined object, 100 words maximum.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `relative_size`: (String) E.g., \"small\", \"medium\", \"large within frame\". (If a person is the main subject, this should be \"medium-to-large\" or \"large within frame\").\n    * `shape_and_color`: (String) Describe the basic shape and dominant color.\n    * `texture`: (String) E.g., \"smooth\", \"rough\", \"metallic\", \"furry\".\n    * `appearance_details`: (String) Any other notable visual details.\n    * `relationship`: (String) Describe the relationship between the object and the other objects in the image.\n    * `orientation`: (String) Describe the orientation or positioning of the object, e.g., \"upright\", \"tilted 45 degrees\", \"horizontal\", \"vertical\", \"facing left\", \"facing right\", \"upside down\", \"lying on its side\".\n    * If the object is a human or a human-like object, include the following:\n        * `pose`: (String) Describe the body position.\n        * `expression`: (String) Describe facial expression and emotion. E.g., \"winking\", \"joyful\", \"serious\", \"surprised\", \"calm\".\n        * `clothing`: (String) Describe attire.\n        * `action`: (String) Describe the action of the human.\n        * `gender`: (String) Describe the gender of the human.\n        * `skin_tone_and_texture`: (String) Describe the skin tone and texture.\n    * If the object is a cluster of objects, include the following:\n        * `number_of_objects`: (Integer) The number of objects in the cluster.\n3.  `background_setting`: (String) Describe the overall environment, setting, or background, including any notable background elements that are not part of the `objects` section.\n4.  `lighting`: (Object)\n    * `conditions`: (String) E.g., \"bright daylight\", \"dim indoor\", \"studio lighting\", \"golden hour\".\n    * `direction`: (String) E.g., \"front-lit\", \"backlit\", \"side-lit from left\".\n    * `shadows`: (String) Describe the presence and quality of shadows, e.g., \"long, soft shadows\", \"sharp, defined shadows\", \"minimal shadows\".\n5.  `aesthetics`: (Object)\n    * `composition`: (String) E.g., \"rule of thirds\", \"symmetrical\", \"centered\", \"leading lines\". If people are the main subject, specify the shot type, e.g., \"medium shot\", \"close-up\", \"portrait composition\".\n    * `color_scheme`: (String) E.g., \"monochromatic blue\", \"warm complementary colors\", \"high contrast\".\n    * `mood_atmosphere`: (String) E.g., \"serene\", \"energetic\", \"mysterious\", \"joyful\".\n    * `preference_score`: (String) Always exactly \"very high\".\n    * `aesthetic_score`: (String) Always exactly \"very high\".\n6.  `photographic_characteristics`: (Object)\n    * `depth_of_field`: (String) E.g., \"shallow\", \"deep\", \"bokeh background\".\n    * `focus`: (String) E.g., \"sharp focus on subject\", \"soft focus\", \"motion blur\".\n    * `camera_angle`: (String) E.g., \"eye-level\", \"low angle\", \"high angle\", \"dutch angle\".\n    * `lens_focal_length`: (String) E.g., \"wide-angle\", \"telephoto\", \"macro\", \"fisheye\". (If the main subject is a person, prefer \"standard lens (e.g., 35mm-50mm)\" or \"portrait lens (e.g., 50mm-85mm)\" to ensure they are framed more closely. Avoid \"wide-angle\" for people unless specified).\n7.  `style_medium`: (String) Identify the artistic style or medium based on the user's prompt or creative interpretation (e.g., \"photograph\", \"oil painting\", \"watercolor\", \"3D render\", \"digital illustration\", \"pencil sketch\").\n8.  `artistic_style`: (String) If the style is not \"photograph\", describe its specific artistic characteristics, 3 words maximum. (e.g., \"impressionistic, vibrant, textured\" for an oil painting).\n9.  `context`: (String) Provide a general description of the type of image this would be. For example: \"This is a concept for a high-fashion editorial photograph intended for a magazine spread,\" or \"This describes a piece of concept art for a fantasy video game.\"\n10. `text_render`: (Array of Objects) By default, this array should be empty (`[]`). Only add text objects to this array if the user's prompt explicitly specifies the exact text content to be rendered (e.g., user asks for \"a poster with the title 'Cosmic Dream'\"). Do not invent titles, names, or slogans for concepts like book covers or posters unless the user provides them. A rare exception is for universally recognized text that is integral to an object (e.g., the word 'STOP' on a 'stop sign'). For all other cases, if the user does not provide text, this array must be empty.\n    * `text`: (String) The exact text content provided by the user. NEVER use generic placeholders.\n    * `location`: (String) E.g., \"center\", \"top-left\", \"bottom-right foreground\".\n    * `size`: (String) E.g., \"medium\", \"large\", \"large within frame\".\n    * `color`: (String) E.g., \"red\", \"blue\", \"green\".\n    * `font`: (String) E.g., \"realistic\", \"cartoonish\", \"minimalist\", \"serif typeface\".\n    * `appearance_details`: (String) Any other notable visual details.\n11. `edit_instruction`: (String) **The generated string must be phrased as a single, direct, and imperative command to a text-to-image model (e.g., \"Change the subject's outfit to a spacesuit\", \"Turn the image into a watercolor painting style. Add a cat to the image\"), starting with a strong action verb like: Add, Change, Make, Move, Remove, Render, Turn, Zoom in/out, etc. ** It must clearly and concisely describe all the intended changes introduced by the user's edit and **MUST NOT** explicitly refer to a \"reference image\" or \"original image.\"\n\n**Output Format Rules (these take precedence over anything above):**\n* Return raw JSON only: no Markdown code fences, no commentary before or after.\n* `aesthetics` must always contain `preference_score` and `aesthetic_score`, both set to exactly \"very high\".\n* Omit any key that does not apply instead of writing `null`, `\"\"`, `[]`, or `{}`. For example, leave out the human-only keys (`pose`, `expression`, `clothing`, `action`, `gender`, `skin_tone_and_texture`) for non-human objects, `number_of_objects` for objects that are not clusters, and `text_render` entirely when there is no text to render.\n* All other keys listed above are required, with non-empty values.\n\n**Message Format:** Each user message contains a reference image followed by:\n\n[EDIT INSTRUCTIONS]:\n<the user's edit request>\n\nUse the provided image as a visual reference only. Analyze its key elements (like the subject and pose) and then generate a new, detailed JSON object for the scene described in the edit instructions. Do not describe the reference image itself; describe the new scene. Follow all of the rules above.",
+          "model": "",
+          "clip_type": "fibo2",
+          "order": "idea",
+          "sep": "newline",
+          "seed": 0,
+          "temperature": 0.3,
+          "max_length": 3000,
+          "top_k": 20,
+          "top_p": 0.95,
+          "min_p": 0.05,
+          "repetition_penalty": 1.05,
+          "presence_penalty": 0,
+          "do_sample": true,
+          "thinking": false,
+          "use_default_template": true,
+          "release_model": false,
+          "system_formula": true,
+          "mtp": false,
+          "seed_mode": "fixed",
+          "idea_share": 0.259
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "color": "#14436c",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 12,
+      "type": "TextEncodeFibo2",
+      "pos": [
+        2300,
+        218
+      ],
+      "size": [
+        416,
+        334
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 10
+        },
+        {
+          "localized_name": "image_1",
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 23
+        },
+        {
+          "localized_name": "image_2",
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "image_3",
+          "name": "images.image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "image_4",
+          "name": "images.image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 24
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 22
+        },
+        {
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 25
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 26
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            12
+          ]
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            13
+          ]
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "title": "Text Encode Fibo 2 (the edit, with the first picture)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "TextEncodeFibo2"
+      },
+      "widgets_values": [
+        "",
+        "",
+        0,
+        0,
+        1
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "negative_prompt": "",
+        "width": 0,
+        "height": 0,
+        "batch_size": 1
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 13,
+      "type": "KSampler",
+      "pos": [
+        2300,
+        608
+      ],
+      "size": [
+        340,
+        262
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 11
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 12
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 13
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 14
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 27
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "title": "KSampler (the edit, 4 steps, CFG 1)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 1,
+        "control_after_generate": "fixed",
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 14,
+      "type": "VAEDecode",
+      "pos": [
+        2300,
+        926
+      ],
+      "size": [
+        313,
+        46
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 15
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28,
+            30
+          ]
+        }
+      ],
+      "title": "VAE Decode (the changed picture)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.2",
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#254f27",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 15,
+      "type": "PixaromaSaveImage",
+      "pos": [
+        2756,
+        218
+      ],
+      "size": [
+        560,
+        820
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 28
+        },
+        {
+          "localized_name": "name",
+          "name": "name",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "title": "Save Image Pixaroma (saves the changed picture)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaSaveImage",
+        "saveImageState": "{\"version\":1,\"folder\":\"\",\"pattern\":\"FIBO 2 Change One Thing/image_%counter%\",\"format\":\"png\",\"quality\":100,\"embedWorkflow\":true,\"civitaiMeta\":false,\"saveOnRun\":true,\"dateStyle\":\"yyyy-MM-dd\",\"counterDigits\":3,\"folded\":false,\"hideBarWhenFolded\":false,\"webpLossless\":false,\"inputSubfolders\":false,\"showOpen\":true,\"showCopy\":true,\"showFolder\":true,\"showPng\":true,\"showJpg\":true,\"showWebp\":true}"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "pixaroma_save_image": ""
+      },
+      "color": "#4f2525",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 16,
+      "type": "PixaromaCompare",
+      "pos": [
+        3356,
+        218
+      ],
+      "size": [
+        560,
+        820
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "localized_name": "image2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [],
+      "title": "Image Compare Pixaroma (before and after)",
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaCompare",
+        "compareState": {
+          "mode": 0,
+          "showWhich": 0,
+          "opacity": 0.5,
+          "images": []
+        }
+      },
+      "color": "#4f2525",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 17,
+      "type": "PixaromaLabel",
+      "pos": [
+        -289,
+        84
+      ],
+      "size": [
+        410,
+        51
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaLabel"
+      },
+      "widgets_values": [
+        "{\"text\":\"FIBO 2 - Change One Thing\",\"fontSize\":31,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f66744\",\"padding\":10,\"borderRadius\":0,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      ],
+      "widgets_values_named": {
+        "label_json": "{\"text\":\"FIBO 2 - Change One Thing\",\"fontSize\":31,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f66744\",\"padding\":10,\"borderRadius\":0,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+      },
+      "color": "rgba(0,0,0,0)",
+      "bgcolor": "rgba(0,0,0,0)"
+    },
+    {
+      "id": 18,
+      "type": "PixaromaInfo",
+      "pos": [
+        -289,
+        189
+      ],
+      "size": [
+        249,
+        51
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaInfo"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<h1>MODELS AND NODES USED IN THIS WORKFLOW</h1><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;These FIBO 2 workflows need <b>ComfyUI 0.43.0 or newer</b>, the first version with FIBO 2. We made and tested them on 0.45.2. On an older ComfyUI some nodes show red: update ComfyUI first.</p><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Diffusion Model</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/diffusion_models/fibo2_edit_turbo_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download fibo2_edit_turbo_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">8.41 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/diffusion_models/fibo2</div><p>\\n\\n</p><p>Create the <code>fibo2</code> folder if it does not exist.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP (FIBO 2 text encoder)</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/text_encoders/qwen3vl_4b_bf16.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_4b_bf16.safetensors<span class=\\\"pix-note-btnsize\\\">8.88 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP (the JSON helper)</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_8b_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">9.35 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><p>The small language model that writes the JSON. The same file as ComfyUI's own FIBO 2 templates use.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"VAE\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load VAE</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download flux2-vae.safetensors<span class=\\\"pix-note-btnsize\\\">336 MB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/vae</div><p>\\n\\n</p><p>The Flux 2 VAE, the same download as in our Flux 2 and FLUX 3 Klein workflows: if you have <code>flux2-vae.safetensors</code> from those, you already have it.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"checkmark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;License</h2><p>\\n\\n</p><p>FIBO 2 is made by <b>Bria AI</b>. It is <b>free for personal and non-commercial use</b> under the CC BY-NC 4.0 license. To use the pictures <b>commercially</b>, you need a license from Bria.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://platform.bria.ai/licensing/pricing?model=fibo-2\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">BRIA LICENSE AND PRICING</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/briaai/Fibo-2.0-dev\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">FIBO 2 model page</a></span>&nbsp;</p><p>\\n\\n</p><p>The JSON helper follows Bria's own instructions from their open VGL toolkit (MIT license): <a href=\\\"https://github.com/Bria-AI/vgl\\\">github.com/Bria-AI/vgl</a>. Thank you, Bria.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;After placing the files, restart ComfyUI or refresh model lists using the <b>R</b> shortcut.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"nodes-installed\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Nodes Installed from Manager</h2><p>\\n\\n</p><ul><li>Pixaroma: <b>update to the latest version</b> (these workflows need at least <b>1.4.250</b>). A node shows red or missing? Update Pixaroma.</li></ul><p>\\n\\n</p><p><b>Which version is the newest?</b> The <b>Latest Pixaroma version</b> button shows it and what is new in it. The help page has the update steps for every kind of install.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/latest/?need=1.4.250\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Latest Pixaroma version</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/#update\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">How to update Pixaroma</a></span>&nbsp;</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"puzzle\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Something missing?</h2><p>\\n\\n</p><p>Each button opens a short video that shows the fix, with the steps written under it.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/missing-nodes/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Red or missing nodes</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/missing-models/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">A model file is missing</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/refresh/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Buttons missing after an update</a></span>&nbsp;</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"pixaroma\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Resources</h2><p>\\n\\n</p><p>\\n  <a class=\\\"pix-note-discord\\\" href=\\\"https://discord.com/invite/gggpkVgBf3\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Join Discord</a>&nbsp;\\n  <a class=\\\"pix-note-yt\\\" href=\\\"https://www.youtube.com/@pixaroma\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Pixaroma YouTube Channel</a>&nbsp;\\n  <span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/report/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Ask for help</a></span>&nbsp;\\n</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Download Models\",\"icon\":\"download-model\",\"color\":\"#f66744\"}}"
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<h1>MODELS AND NODES USED IN THIS WORKFLOW</h1><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;These FIBO 2 workflows need <b>ComfyUI 0.43.0 or newer</b>, the first version with FIBO 2. We made and tested them on 0.45.2. On an older ComfyUI some nodes show red: update ComfyUI first.</p><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Diffusion Model</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/diffusion_models/fibo2_edit_turbo_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download fibo2_edit_turbo_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">8.41 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/diffusion_models/fibo2</div><p>\\n\\n</p><p>Create the <code>fibo2</code> folder if it does not exist.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP (FIBO 2 text encoder)</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Fibo-2.0/resolve/main/text_encoders/qwen3vl_4b_bf16.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_4b_bf16.safetensors<span class=\\\"pix-note-btnsize\\\">8.88 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP (the JSON helper)</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_8b_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">9.35 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><p>The small language model that writes the JSON. The same file as ComfyUI's own FIBO 2 templates use.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"VAE\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load VAE</h2><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download flux2-vae.safetensors<span class=\\\"pix-note-btnsize\\\">336 MB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/vae</div><p>\\n\\n</p><p>The Flux 2 VAE, the same download as in our Flux 2 and FLUX 3 Klein workflows: if you have <code>flux2-vae.safetensors</code> from those, you already have it.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"checkmark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;License</h2><p>\\n\\n</p><p>FIBO 2 is made by <b>Bria AI</b>. It is <b>free for personal and non-commercial use</b> under the CC BY-NC 4.0 license. To use the pictures <b>commercially</b>, you need a license from Bria.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://platform.bria.ai/licensing/pricing?model=fibo-2\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">BRIA LICENSE AND PRICING</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/briaai/Fibo-2.0-dev\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">FIBO 2 model page</a></span>&nbsp;</p><p>\\n\\n</p><p>The JSON helper follows Bria's own instructions from their open VGL toolkit (MIT license): <a href=\\\"https://github.com/Bria-AI/vgl\\\">github.com/Bria-AI/vgl</a>. Thank you, Bria.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;After placing the files, restart ComfyUI or refresh model lists using the <b>R</b> shortcut.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"nodes-installed\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Nodes Installed from Manager</h2><p>\\n\\n</p><ul><li>Pixaroma: <b>update to the latest version</b> (these workflows need at least <b>1.4.250</b>). A node shows red or missing? Update Pixaroma.</li></ul><p>\\n\\n</p><p><b>Which version is the newest?</b> The <b>Latest Pixaroma version</b> button shows it and what is new in it. The help page has the update steps for every kind of install.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/latest/?need=1.4.250\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Latest Pixaroma version</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/#update\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">How to update Pixaroma</a></span>&nbsp;</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"puzzle\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Something missing?</h2><p>\\n\\n</p><p>Each button opens a short video that shows the fix, with the steps written under it.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/missing-nodes/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Red or missing nodes</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/missing-models/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">A model file is missing</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/refresh/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Buttons missing after an update</a></span>&nbsp;</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"pixaroma\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Resources</h2><p>\\n\\n</p><p>\\n  <a class=\\\"pix-note-discord\\\" href=\\\"https://discord.com/invite/gggpkVgBf3\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Join Discord</a>&nbsp;\\n  <a class=\\\"pix-note-yt\\\" href=\\\"https://www.youtube.com/@pixaroma\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Pixaroma YouTube Channel</a>&nbsp;\\n  <span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/report/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Ask for help</a></span>&nbsp;\\n</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Download Models\",\"icon\":\"download-model\",\"color\":\"#f66744\"}}"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 19,
+      "type": "PixaromaInfo",
+      "pos": [
+        -289,
+        294
+      ],
+      "size": [
+        191,
+        51
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaInfo"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<h1>HOW TO USE</h1><p>\\n\\n</p><p>Make a picture from an idea, then change <b>one thing</b> in it and keep everything else. Step 1 is workflow 1: the helper writes the JSON and FIBO 2 Turbo draws it. Step 2 uses FIBO 2's <b>edit mode</b>: a second <b>AI Prompt Pixaroma</b> looks at that picture and your change, writes an edit JSON, and FIBO 2 redraws only what you asked for.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"to-do\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Steps</h2><p>\\n\\n</p><ol><li>Type your idea in the first <b>AI Prompt Pixaroma</b> (1).</li><li>Pick a size (2) and leave the seed (3) on <b>F</b>, so the first picture stays the same while you try changes.</li><li>Type the one change in the second <b>AI Prompt Pixaroma</b> (4): <i>Change the pancakes to waffles.</i></li><li>Press <b>Run</b>. Drag across <b>Image Compare Pixaroma</b> to see what changed. Type another change and Run again: the first picture is not made again.</li></ol><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"prompt\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Writing the change</h2><p>\\n\\n</p><ul><li>Say what it should become: <i>Change her beige apron to a red apron</i>, <i>Make the mug say \\\"GOOD MORNING\\\"</i>.</li><li>One change at a time works best. For a second change, put the changed picture in workflow 4 and change it again.</li><li>Do not add <i>keep everything else the same</i>. ComfyUI's notes say such words made FIBO 2 redraw the frame and invent things; edit mode keeps the rest by itself.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Why edit mode</h2><p>\\n\\n</p><ul><li>We first tried it another way, on a flower shop: the helper rewrote the JSON with the change and FIBO 2 drew it again with the same seed. The shop looked the same at a glance, but every jar, pot and the woman's face had moved: 15 % of the picture outside the flowers changed.</li><li>With edit mode, FIBO 2 gets the first picture itself and lines up with it pixel for pixel. In our tests 0.1 % or less changed outside the part we asked for: the flowers there, the pancake stack here, four seeds each.</li><li>Leave the formulas on both <b>AI Prompt Pixaroma</b> nodes as they are: the first holds Bria's instructions, the second ComfyUI's edit instructions.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"question-mark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Something not working?</h2><p>\\n\\n</p><p>Each button opens the answer on the Pixaroma help page.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/faq/#q-ai-prompt-local\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">What AI Prompt needs</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/faq/#q-save-other-folder\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Save to your own folder</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/look/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Nodes look different from the video</a></span>&nbsp;</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"How to Use\",\"icon\":\"to-do\",\"color\":\"#2a9d8f\"}}"
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<h1>HOW TO USE</h1><p>\\n\\n</p><p>Make a picture from an idea, then change <b>one thing</b> in it and keep everything else. Step 1 is workflow 1: the helper writes the JSON and FIBO 2 Turbo draws it. Step 2 uses FIBO 2's <b>edit mode</b>: a second <b>AI Prompt Pixaroma</b> looks at that picture and your change, writes an edit JSON, and FIBO 2 redraws only what you asked for.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"to-do\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Steps</h2><p>\\n\\n</p><ol><li>Type your idea in the first <b>AI Prompt Pixaroma</b> (1).</li><li>Pick a size (2) and leave the seed (3) on <b>F</b>, so the first picture stays the same while you try changes.</li><li>Type the one change in the second <b>AI Prompt Pixaroma</b> (4): <i>Change the pancakes to waffles.</i></li><li>Press <b>Run</b>. Drag across <b>Image Compare Pixaroma</b> to see what changed. Type another change and Run again: the first picture is not made again.</li></ol><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"prompt\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Writing the change</h2><p>\\n\\n</p><ul><li>Say what it should become: <i>Change her beige apron to a red apron</i>, <i>Make the mug say \\\"GOOD MORNING\\\"</i>.</li><li>One change at a time works best. For a second change, put the changed picture in workflow 4 and change it again.</li><li>Do not add <i>keep everything else the same</i>. ComfyUI's notes say such words made FIBO 2 redraw the frame and invent things; edit mode keeps the rest by itself.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Why edit mode</h2><p>\\n\\n</p><ul><li>We first tried it another way, on a flower shop: the helper rewrote the JSON with the change and FIBO 2 drew it again with the same seed. The shop looked the same at a glance, but every jar, pot and the woman's face had moved: 15 % of the picture outside the flowers changed.</li><li>With edit mode, FIBO 2 gets the first picture itself and lines up with it pixel for pixel. In our tests 0.1 % or less changed outside the part we asked for: the flowers there, the pancake stack here, four seeds each.</li><li>Leave the formulas on both <b>AI Prompt Pixaroma</b> nodes as they are: the first holds Bria's instructions, the second ComfyUI's edit instructions.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"question-mark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Something not working?</h2><p>\\n\\n</p><p>Each button opens the answer on the Pixaroma help page.</p><p>\\n\\n</p><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/faq/#q-ai-prompt-local\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">What AI Prompt needs</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/faq/#q-save-other-folder\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Save to your own folder</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://workflows.pixaroma.com/help/look/\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Nodes look different from the video</a></span>&nbsp;</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"How to Use\",\"icon\":\"to-do\",\"color\":\"#2a9d8f\"}}"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 20,
+      "type": "PixaromaInfo",
+      "pos": [
+        -289,
+        399
+      ],
+      "size": [
+        186,
+        51
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaInfo"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<h1>WHAT EACH NODE DOES</h1><p>\\n\\n</p><p>The colour of a node tells you what kind of node it is. Nothing here needs changing except the blue ones.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Models to download</h2><p>\\n\\n</p><p>Orange. Each one needs a file from the <b>Download Models</b> note.</p><p>\\n\\n</p><ul><li><b>Load Diffusion Model (FIBO 2 Turbo)</b> - <b>FIBO 2 Turbo</b> by Bria: the fast version, 4 steps. The file is called <i>edit turbo</i>, but it makes new pictures too.</li><li><b>Load CLIP (FIBO 2 text encoder)</b> - Reads the JSON description for FIBO 2: Qwen3-VL 4B. The type must be <b>fibo2</b>.</li><li><b>Load VAE (Flux 2 VAE)</b> - Turns the finished render into the picture. FIBO 2 uses the <b>Flux 2</b> VAE, the same file as our Flux 2 and FLUX 3 Klein workflows.</li><li><b>Load CLIP (the JSON helper, Qwen3-VL 8B)</b> - The <b>JSON helper</b>: Qwen3-VL 8B, a small language model that can see pictures. It is wired into <b>AI Prompt Pixaroma</b>, which uses it to write the long JSON description FIBO 2 was trained on. The type must be <b>fibo2</b>.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"chip\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The steps you set</h2><p>\\n\\n</p><p>Blue, and numbered. These are the only nodes you need to touch.</p><p>\\n\\n</p><ul><li><b>AI Prompt Pixaroma (1. your idea, the first picture)</b> - Type your <b>short idea</b> for the first picture, as in workflow 1. The helper turns it into the JSON FIBO 2 was trained on, following Bria's own instructions, and shows it in the box below. Words that must appear go in double quotes.</li><li><b>Sizes Pixaroma (2. picture size)</b> - The picture size, for both pictures. All five are the sizes FIBO 2 was trained at, about 1 megapixel each. The demo is 4:3 in portrait, 864 x 1152.</li><li><b>Seed Pixaroma (3. fixed or random)</b> - One seed for both pictures. Leave it on <b>F</b> (fixed) while you try changes, so the first picture stays the same. The demo uses seed <b>4</b>, the same first picture as workflow 1.</li><li><b>AI Prompt Pixaroma (4. the ONE change)</b> - Type the <b>one change</b>, as an instruction: say what it should become. The helper looks at the first picture (wired into <b>image</b>) and writes the edit JSON, with ComfyUI's own FIBO 2 edit instructions. Do not add <i>keep everything else</i>: edit mode keeps the rest by itself.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"chip\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The work</h2><p>\\n\\n</p><p>Green. They run by themselves.</p><p>\\n\\n</p><ul><li><b>Text Encode Fibo 2 (the first picture)</b> - Reads the JSON description and makes the empty canvas in the size from <b>Sizes Pixaroma</b>.</li><li><b>KSampler (the first picture, 4 steps, CFG 1)</b> - The render: <b>4 steps</b>, CFG <b>1</b>, euler and simple, the settings Bria publishes for Turbo.</li><li><b>VAE Decode (the first picture)</b> - Turns the finished render into a picture.</li><li><b>Text Encode Fibo 2 (the edit, with the first picture)</b> - Reads the edit JSON and takes the first picture as <b>image_1</b>. With a picture connected, FIBO 2 works in edit mode: the result lines up with the picture pixel for pixel, so only the change is new.</li><li><b>KSampler (the edit, 4 steps, CFG 1)</b> - The render: <b>4 steps</b>, CFG <b>1</b>, euler and simple, the settings Bria publishes for Turbo.</li><li><b>VAE Decode (the changed picture)</b> - Turns the finished render into a picture.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"checkmark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The result</h2><p>\\n\\n</p><p>Dark red, at the end.</p><p>\\n\\n</p><ul><li><b>Save Image Pixaroma (saves the changed picture)</b> - Saves the changed picture as PNG into <code>ComfyUI/output/FIBO 2 Change One Thing</code> and shows it on the node.</li><li><b>Image Compare Pixaroma (before and after)</b> - The first picture and the changed one on top of each other. Drag across it: only the change should move.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"info\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Readouts</h2><p>\\n\\n</p><p>Dark. Nothing to set: they show you what happened.</p><p>\\n\\n</p><ul><li><b>Run Timer</b> - The dark clock above the result shows how long the last Run took.</li></ul><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Nodes Info\",\"icon\":\"node-v5\",\"color\":\"#3d7cc9\"}}"
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<h1>WHAT EACH NODE DOES</h1><p>\\n\\n</p><p>The colour of a node tells you what kind of node it is. Nothing here needs changing except the blue ones.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Models to download</h2><p>\\n\\n</p><p>Orange. Each one needs a file from the <b>Download Models</b> note.</p><p>\\n\\n</p><ul><li><b>Load Diffusion Model (FIBO 2 Turbo)</b> - <b>FIBO 2 Turbo</b> by Bria: the fast version, 4 steps. The file is called <i>edit turbo</i>, but it makes new pictures too.</li><li><b>Load CLIP (FIBO 2 text encoder)</b> - Reads the JSON description for FIBO 2: Qwen3-VL 4B. The type must be <b>fibo2</b>.</li><li><b>Load VAE (Flux 2 VAE)</b> - Turns the finished render into the picture. FIBO 2 uses the <b>Flux 2</b> VAE, the same file as our Flux 2 and FLUX 3 Klein workflows.</li><li><b>Load CLIP (the JSON helper, Qwen3-VL 8B)</b> - The <b>JSON helper</b>: Qwen3-VL 8B, a small language model that can see pictures. It is wired into <b>AI Prompt Pixaroma</b>, which uses it to write the long JSON description FIBO 2 was trained on. The type must be <b>fibo2</b>.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"chip\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The steps you set</h2><p>\\n\\n</p><p>Blue, and numbered. These are the only nodes you need to touch.</p><p>\\n\\n</p><ul><li><b>AI Prompt Pixaroma (1. your idea, the first picture)</b> - Type your <b>short idea</b> for the first picture, as in workflow 1. The helper turns it into the JSON FIBO 2 was trained on, following Bria's own instructions, and shows it in the box below. Words that must appear go in double quotes.</li><li><b>Sizes Pixaroma (2. picture size)</b> - The picture size, for both pictures. All five are the sizes FIBO 2 was trained at, about 1 megapixel each. The demo is 4:3 in portrait, 864 x 1152.</li><li><b>Seed Pixaroma (3. fixed or random)</b> - One seed for both pictures. Leave it on <b>F</b> (fixed) while you try changes, so the first picture stays the same. The demo uses seed <b>4</b>, the same first picture as workflow 1.</li><li><b>AI Prompt Pixaroma (4. the ONE change)</b> - Type the <b>one change</b>, as an instruction: say what it should become. The helper looks at the first picture (wired into <b>image</b>) and writes the edit JSON, with ComfyUI's own FIBO 2 edit instructions. Do not add <i>keep everything else</i>: edit mode keeps the rest by itself.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"chip\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The work</h2><p>\\n\\n</p><p>Green. They run by themselves.</p><p>\\n\\n</p><ul><li><b>Text Encode Fibo 2 (the first picture)</b> - Reads the JSON description and makes the empty canvas in the size from <b>Sizes Pixaroma</b>.</li><li><b>KSampler (the first picture, 4 steps, CFG 1)</b> - The render: <b>4 steps</b>, CFG <b>1</b>, euler and simple, the settings Bria publishes for Turbo.</li><li><b>VAE Decode (the first picture)</b> - Turns the finished render into a picture.</li><li><b>Text Encode Fibo 2 (the edit, with the first picture)</b> - Reads the edit JSON and takes the first picture as <b>image_1</b>. With a picture connected, FIBO 2 works in edit mode: the result lines up with the picture pixel for pixel, so only the change is new.</li><li><b>KSampler (the edit, 4 steps, CFG 1)</b> - The render: <b>4 steps</b>, CFG <b>1</b>, euler and simple, the settings Bria publishes for Turbo.</li><li><b>VAE Decode (the changed picture)</b> - Turns the finished render into a picture.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"checkmark\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The result</h2><p>\\n\\n</p><p>Dark red, at the end.</p><p>\\n\\n</p><ul><li><b>Save Image Pixaroma (saves the changed picture)</b> - Saves the changed picture as PNG into <code>ComfyUI/output/FIBO 2 Change One Thing</code> and shows it on the node.</li><li><b>Image Compare Pixaroma (before and after)</b> - The first picture and the changed one on top of each other. Drag across it: only the change should move.</li></ul><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"info\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Readouts</h2><p>\\n\\n</p><p>Dark. Nothing to set: they show you what happened.</p><p>\\n\\n</p><ul><li><b>Run Timer</b> - The dark clock above the result shows how long the last Run took.</li></ul><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Nodes Info\",\"icon\":\"node-v5\",\"color\":\"#3d7cc9\"}}"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 21,
+      "type": "PixaromaInfo",
+      "pos": [
+        -289,
+        504
+      ],
+      "size": [
+        180,
+        51
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaInfo"
+      },
+      "widgets_values": [
+        "{\"version\":1,\"content\":\"<h1>RUN TIMES</h1><p>\\n\\n</p><p>Measured on a <b>24 GB RTX 4090</b> with this workflow, with the models already loaded. A different card gives different numbers, but the shape holds.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><table class=\\\"pix-note-grid\\\" style=\\\"--pix-note-grid-border: #f66744; --pix-note-grid-header-bg: #1a1a1a\\\"><thead><tr><th>What</th><th>Time</th></tr></thead><tbody><tr><td>The helper writing the first JSON</td><td>15 to 20 s</td></tr><tr><td>The first picture, 864 x 1152</td><td>about 2 s</td></tr><tr><td>The helper writing the edit JSON</td><td>15 to 20 s</td></tr><tr><td>The changed picture</td><td>about 4 s</td></tr><tr><td>A new change, same first picture</td><td>about 25 to 30 s</td></tr></tbody></table><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The first Run of the session</h2><p>\\n\\n</p><p>The first Run after starting ComfyUI also has to load the models (about 27 GB: 8.4 GB for FIBO 2, 8.9 GB for the text encoder, 9.4 GB for the JSON helper and 0.3 GB for the VAE), so it takes longer. After that they stay in memory, if your PC has enough of it.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"idea\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;On a smaller card</h2><p>\\n\\n</p><p>FIBO 2 makes pictures of about 1 megapixel, so the picture size is not what makes it heavy: the three models are. ComfyUI moves what does not fit on the card into your PC's memory, which is slower. The same Hugging Face folders also hold smaller versions of both text encoders (int8 for the FIBO 2 one, fp8 and smaller for the helper); we tested only the files in Model Downloads.</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Run Times\",\"icon\":\"run-timer\",\"color\":\"#3f9a4f\"}}"
+      ],
+      "widgets_values_named": {
+        "note_json": "{\"version\":1,\"content\":\"<h1>RUN TIMES</h1><p>\\n\\n</p><p>Measured on a <b>24 GB RTX 4090</b> with this workflow, with the models already loaded. A different card gives different numbers, but the shape holds.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><table class=\\\"pix-note-grid\\\" style=\\\"--pix-note-grid-border: #f66744; --pix-note-grid-header-bg: #1a1a1a\\\"><thead><tr><th>What</th><th>Time</th></tr></thead><tbody><tr><td>The helper writing the first JSON</td><td>15 to 20 s</td></tr><tr><td>The first picture, 864 x 1152</td><td>about 2 s</td></tr><tr><td>The helper writing the edit JSON</td><td>15 to 20 s</td></tr><tr><td>The changed picture</td><td>about 4 s</td></tr><tr><td>A new change, same first picture</td><td>about 25 to 30 s</td></tr></tbody></table><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;The first Run of the session</h2><p>\\n\\n</p><p>The first Run after starting ComfyUI also has to load the models (about 27 GB: 8.4 GB for FIBO 2, 8.9 GB for the text encoder, 9.4 GB for the JSON helper and 0.3 GB for the VAE), so it takes longer. After that they stay in memory, if your PC has enough of it.</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><h2><span data-ic=\\\"idea\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;On a smaller card</h2><p>\\n\\n</p><p>FIBO 2 makes pictures of about 1 megapixel, so the picture size is not what makes it heavy: the three models are. ComfyUI moves what does not fit on the card into your PC's memory, which is slower. The same Hugging Face folders also hold smaller versions of both text encoders (int8 for the FIBO 2 one, fp8 and smaller for the helper); we tested only the files in Model Downloads.</p><p>\\n\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"backgroundColor\":\"#2a2a2a\",\"info\":{\"title\":\"Run Times\",\"icon\":\"run-timer\",\"color\":\"#3f9a4f\"}}"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 22,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        3175,
+        110
+      ],
+      "size": [
+        141,
+        50
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "e7dd136175c6000039b36f2fe9f979a4e941ac4f",
+        "Node name for S&R": "PixaromaRunTimer"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      2,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      1,
+      0,
+      9,
+      0,
+      "MODEL"
+    ],
+    [
+      4,
+      8,
+      0,
+      9,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      8,
+      1,
+      9,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      8,
+      2,
+      9,
+      3,
+      "LATENT"
+    ],
+    [
+      7,
+      9,
+      0,
+      10,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      3,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      4,
+      0,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      11,
+      1,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      12,
+      0,
+      13,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      13,
+      12,
+      1,
+      13,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      14,
+      12,
+      2,
+      13,
+      3,
+      "LATENT"
+    ],
+    [
+      15,
+      13,
+      0,
+      14,
+      0,
+      "LATENT"
+    ],
+    [
+      16,
+      3,
+      0,
+      14,
+      1,
+      "VAE"
+    ],
+    [
+      17,
+      5,
+      0,
+      8,
+      3,
+      "STRING"
+    ],
+    [
+      18,
+      6,
+      0,
+      8,
+      5,
+      "INT"
+    ],
+    [
+      19,
+      6,
+      1,
+      8,
+      6,
+      "INT"
+    ],
+    [
+      20,
+      7,
+      0,
+      9,
+      4,
+      "INT"
+    ],
+    [
+      21,
+      10,
+      0,
+      11,
+      1,
+      "IMAGE"
+    ],
+    [
+      27,
+      7,
+      0,
+      13,
+      4,
+      "INT"
+    ],
+    [
+      28,
+      14,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      10,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      30,
+      14,
+      0,
+      16,
+      1,
+      "IMAGE"
+    ],
+    [
+      10,
+      2,
+      0,
+      12,
+      0,
+      "CLIP"
+    ],
+    [
+      23,
+      10,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      24,
+      3,
+      0,
+      12,
+      5,
+      "VAE"
+    ],
+    [
+      22,
+      11,
+      0,
+      12,
+      6,
+      "STRING"
+    ],
+    [
+      25,
+      6,
+      0,
+      12,
+      8,
+      "INT"
+    ],
+    [
+      26,
+      6,
+      1,
+      12,
+      9,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        458.2307692307692,
+        161.3846153846154
+      ]
+    }
+  },
+  "version": 0.4
+}

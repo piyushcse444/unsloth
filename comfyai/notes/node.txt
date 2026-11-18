@@ -1,0 +1,43 @@
+1) load checkpoint -> model, clip , vae  (.safetensors)
+
+		i) model -> actual text-image or image- image generator
+
+		ii) clip -> negative and positive prompt to help in image generation
+
+		iii) vae (variational autoencoder) -> encode raw image (vae encoder) and decode latent (vae decoder)
+
+                iv) latent -> mathematically representation of image
+
+2) Ksampler -> model,positive,negative, latent_image
+		
+		i) model :- the actual (txt to image or image to image) model 
+		ii) positive :- the clip (positive prompt)
+		iii) negative :- the clip (negative prompt)
+		iv) latent_image :- inital latent (empty -> txt to img, img->img to img)
+
+
+		ksmaple uses latent_image , positive , negative and some parameter . query to model generate latent
+
+		parameters:-
+			
+				i) seed -> The number that sets the starting random noise. With the same model, prompts, and settings, 
+					   reusing a seed usually gives a similar result.
+
+				ii) control after generation -> Says what to do with the seed after a run: keep it, randomize it, 
+								increment it, or decrement it. It affects the next run’s seed.
+
+				iii) steps -> How many denoising rounds KSampler runs. More steps take longer and may add detail, 
+					      but more isn’t always better.
+
+				iv) cfg -> How strongly the generation follows your prompt. Higher values can push prompt details 
+					   harder; excessively high values may make results look harsh or unnatural.
+
+				v) sampler name -> The method KSampler uses to make denoising updates at each step. 
+						   Different samplers can affect image quality, style, and speed.
+
+				vi) scheduler -> Determines how the noise level changes across the steps. 
+						 It works with the sampler to shape the denoising process.
+
+				vii) denoise   -> How much the starting latent is changed. 1.0 means a full generation from noise; 
+						  lower values preserve more of an existing image when doing image-to-image. 
+						  With an empty latent, use 1.0.

@@ -1,0 +1,14 @@
+1) model -> latent 
+		-> empty latent and vae encoder, decoder
+
+
+2) image 
+		-> load image , save image, empty image
+
+
+3) model -> sampling -> ksampler
+
+
+4) model -> conditioning -> clip text encoder prompt
+
+5) model -> loders -> load checkpoint
